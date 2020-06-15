@@ -146,32 +146,26 @@ into the {body} of the default.hbs template --}}
               </div>
             </div>
           </section>
-          {{!-- If you want to embed comments, this is a good place to do it! --}}
-          {{!--
-          <section class="m-comments">
-            <div class="m-load-comments">
-              <div class="m-load-comments__line"></div>
-              <button class="m-icon-button filled as-load-comments js-tooltip js-load-comments" data-tippy-content="Load comments">
-                <span class="icon-comments"></span>
-              </button>
-            </div>
-            <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
-                (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
-                  (d.head || d.body).appendChild(s);
-                })();
-              </script>
-            </div>
-          </section>
-          --}}
+
+          {{!-- 评论 --}}
+          <div id="disqus_thread" style="width: 95%; margin: 10px auto;"></div>
+          <script>
+
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+            var disqus_config = function () {
+              this.page.url = "https://chly-yile.com";  // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = "ghost-{{comment_id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://yangyile.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         {{/post}}
         {{!-- Related posts --}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}

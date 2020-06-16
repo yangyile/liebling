@@ -34,7 +34,7 @@ ol.toc-list {
 	margin: 0;
 }
 @media (max-width: 500px) {
-  .toc-container .toc {
+  .toc-container .toc, .souhu-comment {
     display: none;
   }
 }

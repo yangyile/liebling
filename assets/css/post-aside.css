@@ -8,7 +8,7 @@ body {
 .toc-container .toc {
   position: fixed;
   top: 70px;
-  bottom: auto;
+  bottom: 0;
   overflow-y: scroll;
   width: 200px;
   right: -17px;
@@ -17,9 +17,7 @@ body {
 	font-size: 1.6rem;
   line-height: 1.6em;
   z-index: 1;
-  background-color: var(--background-color);
   color: var(--secondary-foreground-color);
-  opacity: .8;
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link {
   display: inline-block;
@@ -40,6 +38,11 @@ ol.toc-list {
     position: sticky;
     padding: .8rem 0;
     margin-top: 10px;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .l-content {
+    padding: 60px 200px 40px 0;
   }
 }
 

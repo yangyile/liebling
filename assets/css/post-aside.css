@@ -22,9 +22,10 @@ body {
   display: inline-block;
   width: 100%;
   color: #ffffff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+.toc-container .toc .toc-list .toc-list-item .toc-link:hover {
+  color: #3eb0ef;
+  transition: all 0.3s;
 }
 .is-active-link::before {
 	background-color: #3eb0ef;
@@ -36,5 +37,13 @@ ol.toc-list {
   .toc-container .toc {
     position: sticky;
     padding: .8rem 0;
+  }
+}
+
+@media (min-width: 64rem) {
+  .m-share {
+    position: fixed;
+    top: auto;
+    right: 20px;
   }
 }

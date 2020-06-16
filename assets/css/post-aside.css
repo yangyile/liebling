@@ -15,7 +15,8 @@ body {
 	font-size: 1.6rem;
   line-height: 1.6em;
   z-index: 1;
-  background-color: #111111;
+  background-color: #414141;
+  opacity: .8;
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link {
   display: inline-block;

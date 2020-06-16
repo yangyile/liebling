@@ -3,19 +3,6 @@ This footer template is shared across all the pages.
 --}}
 
 <footer class="m-footer">
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  {{#is "post"}}
-  <section>
-      <span id="busuanzi_container_page_pv">本文总阅读量<span id="busuanzi_value_page_pv"></span>次</span>
-  </section>
-  {{/is}}
-  {{#is "index"}}
-  <section>
-      <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-      /
-      <span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
-  </section>
-  {{/is}}
   <div class="m-footer__content">
     <p class="m-footer-copyright">
       <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
@@ -39,4 +26,17 @@ This footer template is shared across all the pages.
       <a href="{{asset "html/javascript.html"}}" rel="jslicense">{{t "JavaScript license information"}}</a>
     </p>
   </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  {{#is "post"}}
+  <section style="text-align: center;color: white;padding-bottom: 20px;">
+      <span id="busuanzi_container_page_pv">本文总阅读量&nbsp;&nbsp;<span id="busuanzi_value_page_pv" style="color: red;"></span>&nbsp;&nbsp;次</span>
+  </section>
+  {{/is}}
+  {{#is "index"}}
+  <section style="text-align: center;color: white;padding-bottom: 20px;">
+      <span id="busuanzi_container_site_pv">本站总访问量&nbsp;&nbsp;<span id="busuanzi_value_site_pv" style="color: red;"></span>&nbsp;&nbsp;次</span>
+      /
+      <span id="busuanzi_container_site_uv">本站访客数&nbsp;&nbsp;<span id="busuanzi_value_site_uv" style="color: red;"></span>&nbsp;&nbsp;人次</span>
+  </section>
+  {{/is}}
 </footer>

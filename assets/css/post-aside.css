@@ -8,20 +8,22 @@ body {
 .toc-container .toc {
   position: fixed;
   top: 70px;
-  right: 0;
-	width: 200px;
+  bottom: auto;
+  overflow-y: scroll;
+  width: 200px;
+  right: -17px;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
 	font-size: 1.6rem;
   line-height: 1.6em;
   z-index: 1;
-  background-color: #414141;
+  background-color: var(--background-color);
+  color: var(--secondary-foreground-color);
   opacity: .8;
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link {
   display: inline-block;
   width: 100%;
-  color: #ffffff;
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link:hover {
   color: #3eb0ef;
@@ -37,6 +39,7 @@ ol.toc-list {
   .toc-container .toc {
     position: sticky;
     padding: .8rem 0;
+    margin-top: 10px;
   }
 }
 

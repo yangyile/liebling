@@ -1,3 +1,10 @@
+.l-post-content h2,
+.l-post-content h3 {
+	outline: none;
+}
+body {
+	overflow: visible;
+}
 .toc-container .toc {
 	position: fixed;
   top: 70px;

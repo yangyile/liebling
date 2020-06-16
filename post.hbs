@@ -19,6 +19,10 @@ into the {body} of the default.hbs template --}}
   <main>
     <article>
       <div class="l-content in-post">
+        {{!-- 侧边导航 --}}
+        <aside class="toc-container">
+          <div class="toc"></div>
+        </aside>
         {{!-- Everything inside the #post tags pulls data from the post --}}
         {{#post}}
           <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
@@ -34,10 +38,6 @@ into the {body} of the default.hbs template --}}
                 </div>
               </header>
               
-              {{!-- 侧边导航 --}}
-              <aside class="toc-container">
-                <div class="toc"></div>
-              </aside>
               <div class="pos-relative js-post-content">
                 <div class="m-share">
                   <div class="m-share__content js-sticky">

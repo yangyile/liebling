@@ -78,7 +78,8 @@ into the {body} of the default.hbs template --}}
                   <label for="message">Message</label>
                   <textarea rows="5" name="message" id="message" placeholder="Your message" required></textarea>
                   <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                  <input type="hidden" name="_next" value="{{@site.url}}/thanks/"/>
+                  {{!-- 自定义的thanks页面需要黄金或者白金会员 --}}
+                  <input type="hidden" name="_next" value="{{@site.url}}/thanks/">
                   <input type="submit" value="Submit">
                 </form>
               </div>

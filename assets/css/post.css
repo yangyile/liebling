@@ -39,8 +39,8 @@ ol.toc-list {
   }
 }
 @media only screen and (min-width: 48rem) {
-  .l-content.in-post {
-    padding-right: 230px;
+  .l-post-content figure.kg-width-full {
+    width: 98vw;
   }
 }
 

@@ -53,6 +53,8 @@ into the {body} of the default.hbs template --}}
                     <span class="m-heading__meta__divider">&bull;</span>
                   {{/if}}
                   <span class="m-heading__meta__time">{{date published_at}}</span>
+                  <span class="m-heading__meta__divider">&bull;</span>
+                  <span>{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes") }}</span>
                 </div>
               </header>
               

@@ -1,4 +1,4 @@
-{{!-- Related posts --}}
+{{!-- 如果是post页面，则取相近的3条posts --}}
 {{#is "post"}}
   {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
     <section class="m-recommended">
@@ -16,8 +16,29 @@
     <p class="yile-no-posts">{{t "Content for a fallback when no related posts are available."}}</p>
   {{/get}}
 {{/is}}
-{{#is "page, author"}}
+
+{{!-- 如果是page，则取featured的3条posts --}}
+{{#is "page"}}
   {{#get "posts" filter="featured:true" limit="3" as |featured|}}
+    <section class="m-recommended">
+      <div class="l-wrapper in-recommended">
+        <h3 class="m-section-title in-recommended">{{t "Featured posts"}}</h3>
+        <div class="m-recommended-articles">
+          <div class="m-recommended-slider js-recommended-articles">
+            {{!-- The tag below iterates over all the related posts --}}
+            {{> "loop"}}
+          </div>
+        </div>
+      </div>
+    </section>
+    {{else}}
+    <p class="yile-no-posts">{{t "Content for a fallback when no related posts are available."}}</p>
+  {{/get}}
+{{/is}}
+
+{{!-- 如果是author页面，则取该作者的三条featured posts --}}
+{{#is "author"}}
+  {{#get "posts" filter="authors:{{primary_author.slug}}+featured:true" limit="3" as |featured|}}
     <section class="m-recommended">
       <div class="l-wrapper in-recommended">
         <h3 class="m-section-title in-recommended">{{t "Featured posts"}}</h3>

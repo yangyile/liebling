@@ -11,11 +11,20 @@ routes:
   /account/:
     template: members/account
     data: page.account
+  /podcast/rss/:
+    template: podcast/rss
+    content_type: text/xml
 
 collections:
   /:
     permalink: /{slug}/
     template: index
+  /blog:
+    permalink: /blog/{slug}/
+    filter: tag:blog+tag:-podcast
+  /podcast/:
+    permalink: /podcast/{slug}/
+    filter: tag:podcast+tag:-blog
 
 taxonomies:
   tag: /tag/{slug}/

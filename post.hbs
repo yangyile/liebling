@@ -188,20 +188,9 @@ into the {body} of the default.hbs template --}}
             <script type="text/javascript" charset="utf-8" src="https://cy-cdn.kuaizhan.com/js/changyan.labs.https.js?appid=cyuTcdCYg"></script>
           </div>
         {{/post}}
-        {{!-- Related posts --}}
-        {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
-          <section class="m-recommended">
-            <div class="l-wrapper in-recommended">
-              <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
-              <div class="m-recommended-articles">
-                <div class="m-recommended-slider js-recommended-articles">
-                  {{!-- The tag below iterates over all the related posts --}}
-                  {{> "loop"}}
-                </div>
-              </div>
-            </div>
-          </section>
-        {{/get}}
+
+        {{!-- 推荐 --}}
+        {{> "recommend"}}
       </div>
     </article>
   </main>

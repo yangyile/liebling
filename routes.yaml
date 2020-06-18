@@ -11,20 +11,19 @@ routes:
   /account/:
     template: members/account
     data: page.account
-  /podcast/rss/:
-    template: podcast/rss
-    content_type: text/xml
+  /technologies/:
+    controller: channel
+    filter: author:yangyile+tag:Linux+tag:Nodejs+tag:Javascript+tag:Algorithm+tag:Framework+tag:Blog+tag:Web+tag:Security
+    template: technologies
+  /living/:
+    controller: channel
+    filter: author:yangyile+tag:Reading+tag:Photography+tag:Film+tag:Gongfu+tag:Car+tag:Finance+tag:Medicine+tag:Music
+    template: living
 
 collections:
   /:
     permalink: /{slug}/
     template: index
-  /blog:
-    permalink: /blog/{slug}/
-    filter: tag:blog+tag:-podcast
-  /podcast/:
-    permalink: /podcast/{slug}/
-    filter: tag:podcast+tag:-blog
 
 taxonomies:
   tag: /tag/{slug}/

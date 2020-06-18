@@ -7,39 +7,31 @@ into the {body} of the default.hbs template --}}
 {{!< default}}
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
-{{#post}}
-  <div class="main-wrap">
-    {{!-- Special header.hbs partial to generate the <header> tag --}}
-    {{> header background=feature_image}}
-    {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=feature_image}}
-    <div class="m-hero__content" data-aos="fade-down">
-      <h1 class="m-hero-title bigger">{{title}}</h1>
-      {{#if custom_excerpt}}
-        <p class="m-hero-description">{{custom_excerpt}}</p>
-      {{/if}}
-    </div>
-    </section>
-    <main>
-      <article>
-        <div class="l-content">
-          <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
-            <div class="l-post-content">
-              <div class="pos-relative js-post-content">
-                {{#get "tags" limit="all"}}
-                  {{#foreach tags}}
-                      {{name}}
-                  {{/foreach}}
-                {{/get}}
-              </div>
+<div class="main-wrap">
+  {{!-- Special header.hbs partial to generate the <header> tag --}}
+  {{> header background=feature_image}}
+  {{!-- Inject styles of the hero image to make it responsive --}}
+  {{> hero background=feature_image}}
+  </section>
+  <main>
+    <article>
+      <div class="l-content">
+        <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
+          <div class="l-post-content">
+            <div class="pos-relative js-post-content">
+              {{#get "tags" limit="all"}}
+                {{#foreach tags}}
+                    {{name}}
+                {{/foreach}}
+              {{/get}}
             </div>
           </div>
-
         </div>
-      </article>
-    </main>
-  </div>
-{{/post}}
+
+      </div>
+    </article>
+  </main>
+</div>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

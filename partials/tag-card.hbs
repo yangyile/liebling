@@ -60,7 +60,7 @@
         }
       }
     </style>
-    <div class="tag-card-item-wrapper">
+    <a href={{url}} class="tag-card-item-wrapper">
       <div class="tag-card-content {{#if feature_image}}tag-card-color-white{{/if}}">
         <h3 class="tag-card-name">{{name}}</h3>
         <div class="tag-card-posts-count">
@@ -72,6 +72,6 @@
       {{#if feature_image}}
         <img src={{feature_image}} class="tag-card-background"></img>
       {{/if}}
-    </div>
+    </a>
   {{/foreach}}
 </section>

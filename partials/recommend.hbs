@@ -26,6 +26,9 @@
           {{#if featured}}
             <div class="m-featured-slider">
               <div class="m-featured-slider__list js-featured-articles">
+                <button class="m-icon-button in-featured-articles slick-prev slick-arrow" aria-label="Previous" style="">
+                  <span class="icon-arrow-left"></span>
+                </button>
                 {{#foreach featured}}
                   <div class="m-featured-slider__list__item">
                     <article class="m-featured-article {{#unless feature_image}}no-picture{{/unless}}">
@@ -63,10 +66,11 @@
                     </article>
                   </div>
                 {{/foreach}}
+                <button class="m-icon-button in-featured-articles slick-next slick-arrow" aria-label="Next" style="">
+                  <span class="icon-arrow-right"></span>
+                </button>
               </div>
             </div>
-            {{!-- Links to Previous/Next posts --}}
-            {{pagination}}
           {{/if}}
           {{else}}
           <p class="yile-no-posts">{{t "No featured posts are available"}}</p>

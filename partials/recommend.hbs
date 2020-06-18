@@ -16,7 +16,7 @@
     <p class="yile-no-posts">{{t "Content for a fallback when no related posts are available."}}</p>
   {{/get}}
 {{/is}}
-{{#is "page"}}
+{{#is "page, author"}}
   {{#get "posts" filter="featured:true" limit="3" as |featured|}}
     <section class="m-recommended">
       <div class="l-wrapper in-recommended">

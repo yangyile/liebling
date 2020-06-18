@@ -19,10 +19,8 @@ into the {body} of the default.hbs template --}}
         <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
           <div class="l-post-content">
             <div class="pos-relative js-post-content">
-              {{#get "tags" limit="all"}}
-                {{#foreach tags}}
-                    {{name}}
-                {{/foreach}}
+              {{#get "tags" filter="slug:[linux]"}}
+                {{tags}}
               {{/get}}
             </div>
           </div>

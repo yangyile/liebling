@@ -67,22 +67,3 @@
     <p class="yile-no-posts">{{t "No featured posts are available."}}</p>
   {{/get}}
 {{/is}}
-
-{{!-- 如果是author页面，则取该作者的三条featured posts --}}
-{{#is "author"}}
-  {{#get "posts" filter="authors:{{primary_author.slug}}+featured:true" limit="3" as |featured|}}
-    <section class="m-recommended">
-      <div class="l-wrapper in-recommended">
-        <h3 class="m-section-title in-recommended">{{t "Featured posts"}}</h3>
-        <div class="m-recommended-articles">
-          <div class="m-recommended-slider js-recommended-articles">
-            {{!-- The tag below iterates over all the related posts --}}
-            {{> "loop"}}
-          </div>
-        </div>
-      </div>
-    </section>
-    {{else}}
-    <p class="yile-no-posts">{{t "No featured posts are available for this author."}}</p>
-  {{/get}}
-{{/is}}

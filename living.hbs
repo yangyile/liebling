@@ -10,22 +10,14 @@ into the {body} of the default.hbs template --}}
 <div class="main-wrap">
   {{!-- Special header.hbs partial to generate the <header> tag --}}
   {{> header background=feature_image}}
-  {{!-- Inject styles of the hero image to make it responsive --}}
-  {{> hero background=feature_image}}
   </section>
   <main>
     <article>
       <div class="l-content">
-        <div class="l-wrapper in-post" data-aos="fade-up" data-aos-delay="300">
-          <div class="l-post-content">
-            <div class="pos-relative js-post-content">
-              {{#get "tags" filter="slug:[car,film,finance,kongfu,medicine,music,photography,reading]"}}
-                {{tags}}
-              {{/get}}
-            </div>
-          </div>
-        </div>
-
+        <h1 class="tag-cards-title">{{t "living tags"}}</h1>
+        {{#get "tags" filter="slug:[car,film,finance,kongfu,medicine,music,photography,reading]"}}
+          {{> tag-card}}
+        {{/get}}
       </div>
     </article>
   </main>

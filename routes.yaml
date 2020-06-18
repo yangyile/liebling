@@ -1,8 +1,8 @@
 routes:
-  /technologies/:
+  /tags-technology/:
     controller: channel
     template: technologies
-  /living/:
+  /tags-living/:
     controller: channel
     template: living
 

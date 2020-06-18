@@ -1,6 +1,19 @@
-{{#get "tags" limit="all"}}
-  {{#foreach tags}}
-      {{name}}
-  {{/foreach}}
-{{/get}}
+{{!< default}}
+
+<div class="main-wrap">
+  {{!-- Special header.hbs partial to generate the <header> tag --}}
+  {{> header background=@site.cover_image}}
+  {{!-- Inject styles of the hero image to make it responsive --}}
+  {{> hero background=@site.cover_image}}
+  </section>
+
+  <main>
+    {{#get "tags" limit="all"}}
+      {{#foreach tags}}
+          {{name}}
+      {{/foreach}}
+    {{/get}}
+  </main>
+</div>
+
 test

@@ -1,1 +1,6 @@
-技术
+{{#get "tags" limit="all"}}
+  {{#foreach tags}}
+      {{name}}
+  {{/foreach}}
+{{/get}}
+test

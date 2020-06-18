@@ -1,16 +1,4 @@
 routes:
-  /signup/:
-    template: members/signup
-    data: page.signup
-  /signin/:
-    template: members/signin
-    data: page.signin
-  /membership/:
-    template: members/membership
-    data: page.membership
-  /account/:
-    template: members/account
-    data: page.account
   /technologies/:
     controller: channel
     filter: author:yangyile+tag:Linux+tag:Nodejs+tag:Javascript+tag:Algorithm+tag:Framework+tag:Blog+tag:Web+tag:Security

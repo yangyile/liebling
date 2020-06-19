@@ -23,13 +23,24 @@
   position: relative;
   width: 100%;
   height: 200px;
-  margin: 0 10px 30px;
+  margin: 0 15px 30px;
   text-align: center;
-  background-color: var(--secondary-subtle-color);
+  background-color: var(--background-color);
+  border: 1px solid var(--secondary-border-color);
   color: var(--titles-color);
   cursor: pointer;
-  transition: all .3s;
-  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+  transition: all .25s cubic-bezier(.02,.01,.47,1);
+}
+.tag-card-wrapper .tag-card-item-wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -o-box-shadow: var(--article-shadow-normal),0 0 0 transparent;
+  box-shadow: var(--article-shadow-normal),0 0 0 transparent;
+  transition: all .25s cubic-bezier(.02,.01,.47,1);
 }
 .tag-card-wrapper .tag-card-item-wrapper .tag-card-background {
   display: block;
@@ -39,7 +50,7 @@
   z-index: 1;
 }
 .tag-card-wrapper .tag-card-item-wrapper:hover {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }
 .tag-card-wrapper .tag-card-item-wrapper .tag-card-content {
   width: 100%;
@@ -61,11 +72,11 @@
 }
 @media (min-width: 576px) {
   .tag-card-wrapper .tag-card-item-wrapper {
-    width: calc((100% - 40px)/2);
+    width: calc((100% - 60px)/2);
   }
 }
 @media (min-width: 768px) {
   .tag-card-wrapper .tag-card-item-wrapper {
-    width: calc((100% - 60px)/3);
+    width: calc((100% - 90px)/3);
   }
 }

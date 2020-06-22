@@ -71,16 +71,16 @@ into the {body} of the default.hbs template --}}
               <div class="pos-relative js-post-content">
                 {{content}}
                 <form class="contact-form" action="https://formspree.io/1454338435@qq.com" method="post">
-                  <label for="full-name">Name</label>
-                  <input type="text" name="name" id="full-name" placeholder="First and Last" required>
-                  <label for="email-address">Email Address</label>
-                  <input type="email" name="_replyto" id="email-address" placeholder="Your email address" required>
-                  <label for="message">Message</label>
-                  <textarea rows="5" name="message" id="message" placeholder="Your message" required></textarea>
+                  <label for="full-name">{{t "Name"}}</label>
+                  <input type="text" name="name" id="full-name" placeholder={{t "First and Last"}} required>
+                  <label for="email-address">{{t "Email Address"}}</label>
+                  <input type="email" name="_replyto" id="email-address" placeholder={{t "Your email address"}} required>
+                  <label for="message">{{t "Message"}}</label>
+                  <textarea rows="5" name="message" id="message" placeholder={{t "Your message"}} required></textarea>
                   <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
                   {{!-- 自定义的thanks页面需要黄金或者白金会员 --}}
                   <input type="hidden" name="_next" value="{{@site.url}}/thanks/">
-                  <input type="submit" value="Submit">
+                  <input type="submit" value={{t "Submit"}}>
                 </form>
               </div>
             </div>

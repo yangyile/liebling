@@ -52,7 +52,7 @@ into the {body} of the default.hbs template --}}
                     <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
                     <span class="m-heading__meta__divider">&bull;</span>
                   {{/if}}
-                  <span class="m-heading__meta__time">{{date published_at format="YYYY-MM-DD"}}</span>
+                  <span class="m-heading__meta__time">{{t "Published at"}}&nbsp;{{date published_at format="YYYY-MM-DD"}}</span>
                   <span class="m-heading__meta__divider">&bull;</span>
                   <span>{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes") }}</span>
                 </div>

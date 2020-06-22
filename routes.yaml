@@ -7,8 +7,8 @@ routes:
     template: living
 
 collections:
-  /:
-    permalink: /{slug}/
+  /blog/:
+    permalink: /blog/{slug}/
     template: index
 
 taxonomies:

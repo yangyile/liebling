@@ -8,9 +8,9 @@ This header template is shared across all the pages.
       <span class="icon-menu"></span>
     </button>
     {{#if @site.logo}}
-      <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
+      <span class="m-logo in-mobile-topbar">
         <img src="{{@site.logo}}" alt="{{@site.title}}">
-      </a>
+      </span>
     {{else}}
       <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">
         {{@site.title}}
@@ -32,9 +32,9 @@ This header template is shared across all the pages.
             <ul role="submenu">
               {{#if @site.logo}}
                 <li class="only-desktop" role="menuitem">
-                  <a href="{{@site.url}}" class="m-logo">
+                  <span class="m-logo">
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
-                  </a>
+                  </span>
                 </li>
                 {{else}}
                 <li class="only-desktop" role="menuitem">

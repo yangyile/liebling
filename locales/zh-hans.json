@@ -43,7 +43,6 @@
   "Name": "姓名",
   "First and Last": "请输入您的姓名",
   "Email Address": "邮箱",
-  "Your email address": "请输入您的邮箱",
   "Message": "反馈",
   "Your message": "请提出您宝贵的意见",
   "Submit": "提交",
@@ -51,5 +50,10 @@
   "Living Tags": "生活标签",
   "No POSTS": "没有文章",
   "% POST": "共% 篇文章",
-  "% POSTS": "共% 篇文章"
+  "% POSTS": "共% 篇文章",
+  "Only a minute": "不到一分钟",
+  "Takes % minutes": "需要 % 分钟",
+  "Published at": "发布于",
+  "Latest posts": "最近发表的文章",
+  "No related posts are available.": "没有相关文章。"
 }

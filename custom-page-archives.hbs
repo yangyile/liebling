@@ -6,6 +6,15 @@ This template is used for the posts that are marked as pages.
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
+<style>
+  .archives .item {
+    border-bottom: 1px dashed #efd114;
+  }
+  .archives .item ul li {
+    list-style: none;
+  }
+</style>
+
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
   <div class="main-wrap">
@@ -53,6 +62,7 @@ into the {body} of the default.hbs template --}}
     .browse({limit: "all", include: "tags,authors", order: "published_at desc"})
     .then((posts) => {
         posts.forEach((post, index) => {
+          console.log(post);
           const time = moment(post.published_at);
           const year = time.get('y');
           const month = time.get('M')+1;
@@ -62,6 +72,21 @@ into the {body} of the default.hbs template --}}
           const parent = document.querySelector(".archives");
           const itemWrapper = document.createElement('div');
           itemWrapper.className = 'item';
+          const monthHtml = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "
+              + year 
+              + "-" 
+              + month 
+              + "</h3><ul class='archives-list list-"
+              + year 
+              + "-" 
+              + month 
+              +"'><li><time>"
+              + date 
+              + "&nbsp;&nbsp;&nbsp;</time><a href='" 
+              + url 
+              + "' style='color: #4fc3f7'>" 
+              + title 
+              + "</a></li></ul>";
           //首篇文章与其余文章分步操作
           if (index > 0) {
             const pre_month = moment(post.published_at).get('month')+1;
@@ -70,24 +95,22 @@ into the {body} of the default.hbs template --}}
               const liWrapper = document.createElement('li');
               const html = "<time>" 
                 + date 
-                + "</time><a href='" 
+                + "&nbsp;&nbsp;&nbsp;</time><a href='" 
                 + url 
                 + "' style='color: #4fc3f7'>"
                 + title
                 + "</a>";
               liWrapper.innerHTML = html;
-              const temp = document.querySelector(".archives .list-"+year+"-"+month);
+              const temp = document.querySelector(".archives .list-" + year + "-" + month);
               temp.append(liWrapper);
             }
-            //当月份不同时，插入新的月份
-            else{
-              const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
-              itemWrapper.innerHTML = html;
+            // 当月份不同时，插入新的月份
+            else {
+              itemWrapper.innerHTML = monthHtml;
               parent.append(itemWrapper);
             }
-          }else{
-            const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
-            itemWrapper.innerHTML = html;
+          } else {
+            itemWrapper.innerHTML = monthHtml;
             parent.append(itemWrapper);
           }
         });

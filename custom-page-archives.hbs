@@ -11,6 +11,14 @@ into the {body} of the default.hbs template --}}
   <div class="main-wrap">
     {{!-- Special header.hbs partial to generate the <header> tag --}}
     {{> header background=feature_image}}
+    {{!-- Inject styles of the hero image to make it responsive --}}
+    {{> hero background=feature_image}}
+    <div class="m-hero__content" data-aos="fade-down">
+      <h1 class="m-hero-title bigger">{{title}}</h1>
+      {{#if custom_excerpt}}
+        <p class="m-hero-description">{{custom_excerpt}}</p>
+      {{/if}}
+    </div>
     </section>
     <main>
       <article>
@@ -48,8 +56,7 @@ into the {body} of the default.hbs template --}}
           const time = moment(post.published_at);
           const year = time.get('y');
           const month = time.get('M')+1;
-          let date = time.get('D');
-          if( date<10 ) date = "0"+date;
+          let date = time.format('YYYY-MM-DD');
           const title = post.title;
           const url = "{{@blog.url}}"+post.url;
           const parent = document.querySelector(".archives");
@@ -61,19 +68,25 @@ into the {body} of the default.hbs template --}}
             //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
             if (month == pre_month) {
               const liWrapper = document.createElement('li');
-              const html = "<time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a>";
+              const html = "<time>" 
+                + date 
+                + "</time><a href='" 
+                + url 
+                + "' style='color: #4fc3f7'>"
+                + title
+                + "</a>";
               liWrapper.innerHTML = html;
               const temp = document.querySelector(".archives .list-"+year+"-"+month);
               temp.append(liWrapper);
             }
             //当月份不同时，插入新的月份
             else{
-              const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
+              const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
               itemWrapper.innerHTML = html;
               parent.append(itemWrapper);
             }
           }else{
-            const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
+            const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
             itemWrapper.innerHTML = html;
             parent.append(itemWrapper);
           }

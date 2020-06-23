@@ -13,6 +13,17 @@ into the {body} of the default.hbs template --}}
   .archives .item ul li {
     list-style: none;
   }
+  .archives .item ul li .post-url {
+    display: inline-block;
+    margin-right: 10px;
+    color: #4fc3f7;
+  }
+  .archives .item ul li .post-author, .archives .item ul li .post-tag {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: .8rem;
+    color: #cccccc;
+  }
 </style>
 
 {{!-- Everything inside the #post tags pulls data from the post --}}
@@ -68,7 +79,11 @@ into the {body} of the default.hbs template --}}
           const month = time.get('M')+1;
           let date = time.format('YYYY-MM-DD');
           const title = post.title;
-          const url = "{{@blog.url}}"+post.url;
+          const primaryAuthor = post.primary_author;
+          const primaryTag = post.primary_tag || {
+            url: post.url,
+            name: ''
+          };
           const parent = document.querySelector(".archives");
           const itemWrapper = document.createElement('div');
           itemWrapper.className = 'item';
@@ -83,10 +98,18 @@ into the {body} of the default.hbs template --}}
               +"'><li><time>"
               + date 
               + "&nbsp;&nbsp;&nbsp;</time><a href='" 
-              + url 
-              + "' style='color: #4fc3f7'>" 
+              + post.url 
+              + "' class='post-url'>" 
               + title 
-              + "</a></li></ul>";
+              + "</a><span><a href='" 
+              + primaryAuthor.url 
+              + "' class='post-author'>" 
+              + primaryAuthor.name 
+              + "</a><a href='" 
+              + primaryTag.url 
+              + "' class='post-tag'>"
+              + primaryTag.name 
+              + "</a></span></li></ul>";
           //首篇文章与其余文章分步操作
           if (index > 0) {
             const pre_month = moment(post.published_at).get('month')+1;
@@ -96,10 +119,18 @@ into the {body} of the default.hbs template --}}
               const html = "<time>" 
                 + date 
                 + "&nbsp;&nbsp;&nbsp;</time><a href='" 
-                + url 
-                + "' style='color: #4fc3f7'>"
+                + post.url 
+                + "' class='post-url'>"
                 + title
-                + "</a>";
+                + "</a><span><a href='" 
+                + primaryAuthor.url 
+                + "' class='post-author'>" 
+                + primaryAuthor.name 
+                + "</a><a href='" 
+                + primaryTag.url 
+                + "' class='post-tag'>"
+                + primaryTag.name 
+                + "</a></span>";
               liWrapper.innerHTML = html;
               const temp = document.querySelector(".archives .list-" + year + "-" + month);
               temp.append(liWrapper);

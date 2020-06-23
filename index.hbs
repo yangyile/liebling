@@ -75,6 +75,8 @@ into the {body} of the default.hbs template --}}
               </div>
             {{/if}}
           {{/get}}
+          {{else}}
+          <div>{{t "No posts"}}</div>
           {{!-- The tag below iterates over all the posts --}}
           {{> "loop"}}
         </div>

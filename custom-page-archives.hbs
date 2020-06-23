@@ -53,23 +53,29 @@ into the {body} of the default.hbs template --}}
           const title = post.title;
           const url = "{{@blog.url}}"+post.url;
           const parent = document.querySelector(".archives");
+          const itemWrapper = document.createElement('div');
+          itemWrapper.className = 'item';
           //首篇文章与其余文章分步操作
           if (index > 0) {
             const pre_month = moment(post.published_at).get('month')+1;
             //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
             if (month == pre_month) {
-              const html = document.createElement("<li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li>");
+              const liWrapper = document.createElement('li');
+              const html = "<time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a>";
+              liWrapper.innerHTML = html;
               const temp = document.querySelector(".archives .list-"+year+"-"+month);
-              temp.append(html);
+              temp.append(liWrapper);
             }
             //当月份不同时，插入新的月份
             else{
-              const html = document.createElement("<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul></div>");
-              parent.append(html);
+              const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
+              itemWrapper.innerHTML = html;
+              parent.append(itemWrapper);
             }
           }else{
-            const html = document.createElement("<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul></div>");
-            parent.append(html);
+            const html = "<h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul>";
+            itemWrapper.innerHTML = html;
+            parent.append(itemWrapper);
           }
         });
     })

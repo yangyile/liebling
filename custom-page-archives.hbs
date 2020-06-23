@@ -11,14 +11,6 @@ into the {body} of the default.hbs template --}}
   <div class="main-wrap">
     {{!-- Special header.hbs partial to generate the <header> tag --}}
     {{> header background=feature_image}}
-    {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=feature_image}}
-    <div class="m-hero__content" data-aos="fade-down">
-      <h1 class="m-hero-title bigger">{{title}}</h1>
-      {{#if custom_excerpt}}
-        <p class="m-hero-description">{{custom_excerpt}}</p>
-      {{/if}}
-    </div>
     </section>
     <main>
       <article>
@@ -40,10 +32,35 @@ into the {body} of the default.hbs template --}}
     * 调用ghost content API，完成文章归档功能
     */
   api.posts
-    .browse({limit: "all", include: "tags,authors"})
+    .browse({limit: "all", include: "tags,authors", order: "published_at desc"})
     .then((posts) => {
         posts.forEach((post) => {
-            console.log(post, post.title);
+          const time = moment(posts[i].published_at);
+          const year = time.get('y');
+          const month = time.get('M')+1;
+          let date = time.get('D');
+          if( date<10 ) date = "0"+date;
+          const title = posts[i].title;
+          const url = "{{@blog.url}}"+posts[i].url;
+          const parent = document.querySelector(".archives");
+          //首篇文章与其余文章分步操作
+          if (i > 0) {
+            const pre_month = moment(posts[i - 1].published_at).get('month')+1;
+            //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
+            if (month == pre_month) {
+              const html = document.createElement("<li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li>");
+              const temp = document.querySelector(".archives .list-"+year+"-"+month);
+              temp.append(html);
+            }
+            //当月份不同时，插入新的月份
+            else{
+              const html = document.createElement("<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul></div>");
+              parent.append(html);
+            }
+          }else{
+            const html = document.createElement("<div class='item'><h3><i class='fa fa-calendar fa-fw' aria-hidden='true'></i> "+year+"-"+month+"</h3><ul class='archives-list list-"+year+"-"+month+"'><li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li></ul></div>");
+            parent.append(html);
+          }
         });
     })
     .catch((err) => {

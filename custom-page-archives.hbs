@@ -45,17 +45,17 @@ into the {body} of the default.hbs template --}}
     .browse({limit: "all", include: "tags,authors", order: "published_at desc"})
     .then((posts) => {
         posts.forEach((post, index) => {
-          const time = moment(posts[i].published_at);
+          const time = moment(post.published_at);
           const year = time.get('y');
           const month = time.get('M')+1;
           let date = time.get('D');
           if( date<10 ) date = "0"+date;
-          const title = posts[i].title;
-          const url = "{{@blog.url}}"+posts[i].url;
+          const title = post.title;
+          const url = "{{@blog.url}}"+post.url;
           const parent = document.querySelector(".archives");
           //首篇文章与其余文章分步操作
           if (index > 0) {
-            const pre_month = moment(posts[i - 1].published_at).get('month')+1;
+            const pre_month = moment(post.published_at).get('month')+1;
             //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
             if (month == pre_month) {
               const html = document.createElement("<li><time>"+date+"日</time><a href='"+url+"' style='color: #4fc3f7'>"+title+"</a></li>");

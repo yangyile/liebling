@@ -27,10 +27,17 @@ into the {body} of the default.hbs template --}}
     </main>
   </div>
 {{/post}}
+<!--ghost content api-->
+<script src="https://unpkg.com/@tryghost/content-api@1.4.1/umd/content-api.min.js"></script>
 <script type = "text/javascript">
   /**
     * 调用ghost content API，完成文章归档功能
     */
+  const api = new GhostContentAPI({
+    url: 'https://chly-yile.com',
+    key: '0b3cdc24279b8c023eac4b62b3',
+    version: "v3"
+  });
   api.posts
     .browse({limit: "all", include: "tags,authors", order: "published_at desc"})
     .then((posts) => {

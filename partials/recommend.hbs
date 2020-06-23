@@ -3,7 +3,9 @@
   {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
     <section class="m-recommended">
       <div class="l-wrapper in-recommended">
-        <h3 class="m-section-title in-recommended">{{t "Latest posts"}}</h3>
+        {{#if related}}
+          <h3 class="m-section-title in-recommended">{{t "Latest posts"}}</h3>
+        {{/if}}
         <div class="m-recommended-articles">
           <div class="m-recommended-slider js-recommended-articles">
             {{!-- The tag below iterates over all the related posts --}}
@@ -12,7 +14,5 @@
         </div>
       </div>
     </section>
-    {{else}}
-    <p class="yile-no-posts">{{t "No related posts are available."}}</p>
   {{/get}}
 {{/is}}

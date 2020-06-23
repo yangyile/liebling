@@ -23,7 +23,7 @@ into the {body} of the default.hbs template --}}
       <div class="m-hero__meta">
         <ul class="m-hero-stats">
           <li>
-            {{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}} {{t "with this tag"}}
+            {{t "With this tag"}} {{plural ../pagination.total empty=(t "No posts") singular=(t "Total 1 post") plural=(t "Total % posts")}}
           </li>
         </ul>
       </div>

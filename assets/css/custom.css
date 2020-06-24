@@ -122,3 +122,22 @@
   color: white;
   width: auto;
 }
+
+/* 归档 */
+.archives .item {
+  border-bottom: 1px dashed #efd114;
+}
+.archives .item ul li {
+  list-style: none;
+}
+.archives .item ul li .post-url {
+  display: inline-block;
+  margin-right: 10px;
+  color: #4fc3f7;
+}
+.archives .item ul li .post-author, .archives .item ul li .post-tag {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: .8rem;
+  color: #cccccc;
+}

@@ -63,7 +63,7 @@ This header template is shared across all the pages.
                     <section class="m-recent-articles">
                       <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>
                       <div class="js-recent-articles">
-                        {{#get "posts" limit="4" order="published_at desc"}}
+                        {{#get "posts" limit="4" order="updated_at desc"}}
                           {{#foreach posts}}
                             <div>
                               <a href="{{url}}" class="m-recent-article">

@@ -169,6 +169,9 @@
 .m-article-card.no-picture .m-article-card__title {
   font-size: 1.25rem;
 }
+.m-section-title.in-recommended {
+  font-size: 1rem;
+}
 
 /* 侧边栏 */
 .toc-container .toc .toc-list .toc-list-item .toc-link {

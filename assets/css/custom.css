@@ -144,3 +144,22 @@
   font-size: .8rem;
   color: #cccccc;
 }
+
+/* post */
+.l-post-content .m-heading h1 {
+  font-size: 1.5rem;
+}
+.l-post-content .js-post-content p {
+  text-indent: 2rem;
+}
+
+/* 侧边栏 */
+.toc-container .toc .toc-list .toc-list-item .toc-link {
+  line-height: normal;
+}
+.toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H1 {
+  font-size: 1rem;
+}
+.toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H3 {
+  font-size: .8rem;
+}

@@ -160,6 +160,8 @@
   list-style: none;
   font-size: .9rem;
   color: #04aeee;
+  margin: 5px 0;
+  text-indent: 1rem;
 }
 
 /* 侧边栏 */

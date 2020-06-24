@@ -153,8 +153,11 @@
   font-size: 1rem;
   text-indent: 2rem;
 }
-.l-post-content .js-post-content h3 {
+.l-post-content .js-post-content h2 {
   font-size: 1.25rem;
+}
+.l-post-content .js-post-content h3 {
+  font-size: 1rem;
 }
 .l-post-content .js-post-content ul li {
   list-style: none;

@@ -14,7 +14,7 @@ into the {body} of the default.hbs template --}}
   <main>
     <article>
       <div class="l-content">
-        <h1 class="tag-cards-title">{{t "Technology Tags"}}</h1>
+        <h1 class="tag-cards-title"><span class="tag-cards-cont">{{t "Technology Tags"}}</span></h1>
         {{#get "tags" filter="slug:[linux,algorithm,blog,framework,javascript,nodejs,security,web,docker,custom-ghost,automation]"}}
           {{> tag-card}}
         {{/get}}

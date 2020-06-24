@@ -169,6 +169,9 @@
   line-height: normal;
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H1 {
+  font-size: 1.2rem;
+}
+.toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H2 {
   font-size: 1rem;
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H3 {

@@ -10,6 +10,7 @@ collections:
   /:
     permalink: /{slug}/
     template: index
+    order: updated_at desc
 
 taxonomies:
   tag: /tag/{slug}/

@@ -5,6 +5,11 @@
   font-size: 1.2rem;
 }
 
+/* page */
+.page-header {
+  border-bottom: 1px dashed #efd114;
+}
+
 /* 自定义标签页 */
 .tag-cards-title {
   text-align: center;

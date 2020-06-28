@@ -50,7 +50,7 @@ into the {body} of the default.hbs template --}}
     version: "v3"
   });
   api.posts
-    .browse({limit: "all", include: "tags,authors", order: "published_at desc"})
+    .browse({limit: "all", include: "tags,authors", order: "updated_at desc"})
     .then((posts) => {
         posts.forEach((post, index) => {
           console.log(post);

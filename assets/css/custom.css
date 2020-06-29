@@ -177,6 +177,12 @@
 .m-section-title.in-recommended {
   font-size: 1rem;
 }
+pre {
+  background: #f2f2f2;
+  margin-left: 2rem;
+  padding: 20px;
+  overflow-y: scroll;
+}
 
 /* 侧边栏 */
 .toc-container .toc .toc-list .toc-list-item .toc-link {

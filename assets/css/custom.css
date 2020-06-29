@@ -179,7 +179,7 @@
 }
 pre {
   background: #f2f2f2;
-  margin-left: 2rem;
+  margin-left: 2rem!important;
   padding: 20px;
   overflow-y: scroll;
 }

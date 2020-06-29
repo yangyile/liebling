@@ -13,6 +13,19 @@ into the {body} of the default.hbs template --}}
     {{> header background=feature_image}}
     {{!-- Inject styles of the hero image to make it responsive --}}
     {{> hero background=feature_image}}
+    {{#if feature_image}}
+      <style>
+        .m-heading {
+          z-index: 1;
+        }
+        .m-heading .m-heading__title, .m-heading .m-heading__name, 
+        .m-heading .m-heading__meta .m-heading__meta__time, 
+        .m-heading .m-heading__meta .m-heading__meta__divider {
+          color: #ffffff!important;
+        }
+      </style>
+      {{> post-header}}
+    {{/if}}
     </section>
   {{/post}}
   
@@ -45,18 +58,9 @@ into the {body} of the default.hbs template --}}
         {{#post}}
           <div class="l-wrapper in-post {{#unless feature_image}}no-image{{/unless}} js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
             <div class="l-post-content {{#if @labs.subscribers}}has-subscribe-form{{/if}} {{#if @labs.members}}has-subscribe-form{{/if}} js-progress-content">
-              <header class="m-heading">
-                <h1 class="m-heading__title in-post">{{title}}</h1>
-                {{#if primary_tag}}
-                  <div style="color: var(--link-color)!important;padding: 0 0 20px;"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></div>
-                {{/if}}
-                <div class="m-heading__meta">
-                  <span class="m-heading__meta__time">{{t "Published at"}}&nbsp;{{date published_at format="YYYY-MM-DD"}}</span>
-                  <span class="m-heading__meta__divider">&bull;</span>
-                  <span class="m-heading__meta__time">{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes") }}</span>
-                </div>
-              </header>
-              
+              {{#unless feature_image}}
+                {{> post-header}}
+              {{/unless}}
               <div class="pos-relative js-post-content">
                 {{content}}
               </div>

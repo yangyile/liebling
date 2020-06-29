@@ -1,0 +1,11 @@
+<header class="m-heading">
+  <h1 class="m-heading__title in-post">{{title}}</h1>
+  {{#if primary_tag}}
+    <div style="margin-bottom: 20px; text-decoration: underline;"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></div>
+  {{/if}}
+  <div class="m-heading__meta">
+    <span class="m-heading__meta__time">{{t "Published at"}}&nbsp;{{date published_at format="YYYY-MM-DD"}}</span>
+    <span class="m-heading__meta__divider">&bull;</span>
+    <span class="m-heading__meta__time">{{reading_time minute=(t "Only a minute") minutes=(t "Takes % minutes") }}</span>
+  </div>
+</header>

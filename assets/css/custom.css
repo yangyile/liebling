@@ -182,6 +182,7 @@ pre {
   margin-left: 2rem!important;
   padding: 20px;
   overflow-y: scroll;
+  border: 1px dashed #ccc;
 }
 
 /* 侧边栏 */

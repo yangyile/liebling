@@ -188,6 +188,7 @@ pre {
 /* 侧边栏 */
 .toc-container .toc .toc-list .toc-list-item .toc-link {
   line-height: normal;
+  border-bottom: 1px dashed #b3d4fc;
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H1 {
   font-size: 1.2rem;
@@ -197,4 +198,10 @@ pre {
 }
 .toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H3 {
   font-size: .8rem;
+}
+.toc>.toc-list li {
+  margin: 10px 0;
+  padding: 0;
+  line-height: normal;
+  font-size: 1rem;
 }

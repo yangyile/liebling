@@ -56,7 +56,7 @@ into the {body} of the default.hbs template --}}
           const time = moment(post.published_at);
           const year = time.get('y');
           const month = time.get('M')+1;
-          let date = time.format('YYYY-MM-DD');
+          let updatedDate = moment(post.updated_at).format('YYYY-MM-DD HH:mm:ss');
           const title = post.title;
           const primaryAuthor = post.primary_author;
           const primaryTag = post.primary_tag || {
@@ -75,7 +75,7 @@ into the {body} of the default.hbs template --}}
               + "-" 
               + month 
               +"'><li><time>更新于"
-              + date 
+              + updatedDate 
               + "&nbsp;&nbsp;&nbsp;</time><a href='" 
               + post.url 
               + "' class='post-url'>" 
@@ -96,7 +96,7 @@ into the {body} of the default.hbs template --}}
             if (month == pre_month) {
               const liWrapper = document.createElement('li');
               const html = "<time>更新于" 
-                + date 
+                + updatedDate 
                 + "&nbsp;&nbsp;&nbsp;</time><a href='" 
                 + post.url 
                 + "' class='post-url'>"

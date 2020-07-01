@@ -50,7 +50,7 @@ into the {body} of the default.hbs template --}}
     version: "v3"
   });
   api.posts
-    .browse({limit: "all", include: "tags,authors", order: "updated_at asc"})
+    .browse({limit: "all", include: "tags,authors", order: "updated_at desc"})
     .then((posts) => {
         posts.forEach((post, index) => {
           const time = moment(post.updated_at);

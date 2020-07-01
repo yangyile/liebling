@@ -53,7 +53,7 @@ into the {body} of the default.hbs template --}}
     .browse({limit: "all", include: "tags,authors", order: "updated_at desc"})
     .then((posts) => {
         posts.forEach((post, index) => {
-          const time = moment(post.updated_at);
+          const time = moment(post.published_at);
           const year = time.get('y');
           const month = time.get('M')+1;
           let date = time.format('YYYY-MM-DD');

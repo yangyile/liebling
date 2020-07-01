@@ -92,7 +92,7 @@ into the {body} of the default.hbs template --}}
           //首篇文章与其余文章分步操作
           if (index > 0) {
             const pre_month = moment(post.published_at).get('month');
-            const temp_month = pre_month === 0 ? 12 : pre_month;
+            const temp_month = pre_month == 0 ? 12 : pre_month;
             //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
             if (month == temp_month) {
               const liWrapper = document.createElement('li');
@@ -112,7 +112,7 @@ into the {body} of the default.hbs template --}}
                 + primaryTag.name 
                 + "</a></span>";
               liWrapper.innerHTML = html;
-              const temp = document.querySelector(".archives .list-" + year + "-" + month);
+              const temp = document.querySelector(".archives-list.list-" + year + "-" + month);
               temp.append(liWrapper);
             }
             // 当月份不同时，插入新的月份

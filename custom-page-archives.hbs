@@ -93,7 +93,6 @@ into the {body} of the default.hbs template --}}
           if (index > 0) {
             const pre_month = moment(posts[index - 1].published_at).get('month') + 1;
             //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
-            console.log(pre_month, month);
             if (month == pre_month) {
               const liWrapper = document.createElement('li');
               const html = "<time>更新于" 
@@ -108,9 +107,9 @@ into the {body} of the default.hbs template --}}
                 + primaryAuthor.name 
                 + "</a><a href='" 
                 + primaryTag.url 
-                + "' class='post-tag'>"
-                + primaryTag.name 
-                + "</a></span>";
+                + "' class='post-tag'>{{t "
+                + primaryTag.name
+                + " }}</a></span>";
               liWrapper.innerHTML = html;
               const temp = document.querySelector(".archives-list.list-" + year + "-" + month);
               temp.append(liWrapper);

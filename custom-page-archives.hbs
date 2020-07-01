@@ -91,7 +91,7 @@ into the {body} of the default.hbs template --}}
               + "</a></span></li></ul>";
           //首篇文章与其余文章分步操作
           if (index > 0) {
-            const pre_month = moment(post[index - 1].published_at).get('month') + 1;
+            const pre_month = moment(posts[index - 1].published_at).get('month') + 1;
             //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
             console.log(pre_month, month);
             if (month == pre_month) {

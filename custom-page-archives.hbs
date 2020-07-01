@@ -53,8 +53,7 @@ into the {body} of the default.hbs template --}}
     .browse({limit: "all", include: "tags,authors", order: "updated_at desc"})
     .then((posts) => {
         posts.forEach((post, index) => {
-          console.log(post);
-          const time = moment(post.published_at);
+          const time = moment(post.updated_at);
           const year = time.get('y');
           const month = time.get('M')+1;
           let date = time.format('YYYY-MM-DD');
@@ -75,7 +74,7 @@ into the {body} of the default.hbs template --}}
               + year 
               + "-" 
               + month 
-              +"'><li><time>"
+              +"'><li><time>更新于"
               + date 
               + "&nbsp;&nbsp;&nbsp;</time><a href='" 
               + post.url 
@@ -92,11 +91,12 @@ into the {body} of the default.hbs template --}}
               + "</a></span></li></ul>";
           //首篇文章与其余文章分步操作
           if (index > 0) {
-            const pre_month = moment(post.published_at).get('month')+1;
+            const pre_month = moment(post.published_at).get('month');
+            const temp_month = pre_month === 0 ? 12 : pre_month;
             //如果当前文章的发表月份与前篇文章发表月份相同，则在该月份ul下插入该文章
             if (month == pre_month) {
               const liWrapper = document.createElement('li');
-              const html = "<time>" 
+              const html = "<time>更新于" 
                 + date 
                 + "&nbsp;&nbsp;&nbsp;</time><a href='" 
                 + post.url 

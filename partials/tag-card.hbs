@@ -2,7 +2,7 @@
   {{#foreach tags}}
     <a href={{url}} class="tag-card-item-wrapper">
       <div class="tag-card-content {{#if feature_image}}tag-card-color-white{{/if}}">
-        <h3 class="tag-card-name">{{name}}</h3>
+        <h3 class="tag-card-name">{{t name}}</h3>
         <div class="tag-card-posts-count">
           {{#get "posts" filter="tag:{{slug}}" order="updated_at desc"}}
             {{plural pagination.total empty=(t "No POSTS") singular=(t "% POST") plural=(t "% POSTS")}}

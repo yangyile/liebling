@@ -107,9 +107,9 @@ into the {body} of the default.hbs template --}}
                 + primaryAuthor.name 
                 + "</a><a href='" 
                 + primaryTag.url 
-                + "' class='post-tag'>{{t "
+                + "' class='post-tag'>"
                 + primaryTag.name
-                + " }}</a></span>";
+                + "</a></span>";
               liWrapper.innerHTML = html;
               const temp = document.querySelector(".archives-list.list-" + year + "-" + month);
               temp.append(liWrapper);

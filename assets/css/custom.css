@@ -135,6 +135,10 @@
 .archives .item {
   border-bottom: 1px dashed #efd114;
 }
+.l-post-content .js-post-content .archives .item h3 {
+  font-size: 2rem;
+  margin-top: 1.8rem;
+}
 .archives .item ul li {
   list-style: none;
 }
@@ -149,6 +153,7 @@
   font-size: .8rem;
   color: #cccccc;
 }
+
 
 /* post */
 .l-post-content .m-heading h1 {

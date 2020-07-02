@@ -186,7 +186,7 @@ pre {
   background: #f2f2f2;
   margin-left: 2rem!important;
   padding: 20px;
-  overflow-x: scroll;
+  overflow-x: auto;
   border: 1px dashed #ccc;
 }
 

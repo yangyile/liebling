@@ -8,9 +8,9 @@ This header template is shared across all the pages.
       <span class="icon-menu"></span>
     </button>
     {{#if @site.logo}}
-      <span class="m-logo in-mobile-topbar">
+      <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
         <img src="{{@site.logo}}" alt="{{@site.title}}">
-      </span>
+      </a>
     {{else}}
       <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">
         {{@site.title}}

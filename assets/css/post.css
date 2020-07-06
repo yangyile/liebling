@@ -110,3 +110,8 @@ ol.toc-list {
   line-height: normal;
   font-size: 1rem;
 }
+
+/* 评论 */
+.gt-container .gt-header-controls {
+  z-index: 2;
+}

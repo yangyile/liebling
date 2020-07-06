@@ -51,3 +51,62 @@ ol.toc-list {
     right: 20px;
   }
 }
+
+/* post content */
+.l-post-content .m-heading h1 {
+  font-size: 1.5rem;
+}
+.l-post-content .js-post-content p {
+  font-size: 1rem;
+  text-indent: 2rem;
+}
+.l-post-content .js-post-content h2 {
+  font-size: 1.25rem;
+}
+.l-post-content .js-post-content h3 {
+  font-size: 1rem;
+}
+.l-post-content .js-post-content ul {
+  padding-inline-start: 0;
+  margin-left: 0;
+}
+.l-post-content .js-post-content ul li {
+  list-style: none;
+  font-size: .9rem;
+  color: #04aeee;
+  margin: 5px 0;
+}
+.m-article-card.no-picture .m-article-card__title {
+  font-size: 1.25rem;
+}
+.m-section-title.in-recommended {
+  font-size: 1rem;
+}
+pre {
+  background: #f2f2f2;
+  margin-left: 0!important;
+  padding: 20px;
+  overflow-x: auto;
+  border: 1px dashed #ccc;
+}
+
+/* 侧边栏 */
+.toc-container .toc .toc-list .toc-list-item .toc-link {
+  line-height: normal;
+  border-bottom: 1px dashed #b3d4fc;
+}
+.toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H1 {
+  font-size: 1.2rem;
+}
+.toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H2 {
+  font-size: 1rem;
+}
+.toc-container .toc .toc-list .toc-list-item .toc-link.node-name--H3 {
+  font-size: .8rem;
+}
+.toc>.toc-list li {
+  margin: 10px 0;
+  padding: 0;
+  line-height: normal;
+  font-size: 1rem;
+}

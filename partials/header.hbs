@@ -32,9 +32,9 @@ This header template is shared across all the pages.
             <ul role="submenu">
               {{#if @site.logo}}
                 <li class="only-desktop" role="menuitem">
-                  <span class="m-logo">
+                  <a href="{{@site.url}}" class="m-logo">
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
-                  </span>
+                  </a>
                 </li>
                 {{else}}
                 <li class="only-desktop" role="menuitem">

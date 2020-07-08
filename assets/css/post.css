@@ -1,24 +1,6 @@
 body {
 	overflow: visible;
 }
-@media (max-width: 500px) {
-  .toc-container .toc, .souhu-comment {
-    display: none;
-  }
-}
-@media only screen and (min-width: 48rem) {
-  .l-post-content figure.kg-width-full {
-    width: 98vw;
-  }
-}
-
-@media (min-width: 64rem) {
-  .m-share {
-    position: fixed;
-    top: auto;
-    right: 20px;
-  }
-}
 
 /* post content */
 .l-post-content h2,
@@ -60,6 +42,20 @@ pre {
   padding: 20px;
   overflow-x: auto;
   border: 1px dashed #ccc;
+}
+@media only screen and (min-width: 48rem) {
+  .l-post-content figure.kg-width-full {
+    width: 98vw;
+  }
+}
+
+/* 返回顶部 */
+@media (min-width: 64rem) {
+  .m-share {
+    position: fixed;
+    top: auto;
+    right: 20px;
+  }
 }
 
 /* 侧边栏 */
@@ -109,6 +105,13 @@ ol.toc-list {
   padding: 0;
   line-height: normal;
   font-size: 1rem;
+}
+
+/* 搜狐评论打赏 */
+@media (max-width: 500px) {
+  .toc-container .toc, .souhu-comment {
+    display: none;
+  }
 }
 
 /* 评论 */

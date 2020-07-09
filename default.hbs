@@ -26,8 +26,6 @@
       }
     </style>
 
-    <!--侧边导航-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.2/tocbot.min.css" integrity="sha256-C1tdjnnIBE7XCqkMhVKjQ0l4XMEsn+Yi1iQAj3J1wMI=" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" media="screen" />
@@ -87,15 +85,5 @@
 
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
-
-    <!--侧边导航-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.2/tocbot.min.js" integrity="sha256-CfQUUe5nCr0s8VaB1dPISX25JmwUHVRabMji+YUFUS4=" crossorigin="anonymous"></script>
-    <script>
-        tocbot.init({
-            tocSelector: '.toc',
-            contentSelector: '.l-post-content',
-            hasInnerContainers: true
-        });
-    </script>
   </body>
 </html>

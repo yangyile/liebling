@@ -6,6 +6,9 @@ This template is used for the post page.
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
+<!--侧边导航-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.2/tocbot.min.css" integrity="sha256-C1tdjnnIBE7XCqkMhVKjQ0l4XMEsn+Yi1iQAj3J1wMI=" crossorigin="anonymous" />
+
 <div class="main-wrap">
   {{!-- Everything inside the #post tags pulls data from the post --}}
   {{#post}}
@@ -195,6 +198,16 @@ into the {body} of the default.hbs template --}}
     </article>
   </main>
 </div>
+
+<!--侧边导航-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.2/tocbot.min.js" integrity="sha256-CfQUUe5nCr0s8VaB1dPISX25JmwUHVRabMji+YUFUS4=" crossorigin="anonymous"></script>
+<script>
+    tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.l-post-content',
+        hasInnerContainers: true
+    });
+</script>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

@@ -160,7 +160,7 @@ into the {body} of the default.hbs template --}}
           </section>
 
           {{!-- 接入打赏 --}}
-          <div style="width: 95%; margin: 10px auto;" class="souhu-comment">
+          <div class="souhu-comment">
             <!-- 代码1：放在页面需要展示的位置  -->
             <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
             <div id="cyReward" role="cylabs" data-use="reward" sid="{{id}}"></div>
@@ -171,10 +171,7 @@ into the {body} of the default.hbs template --}}
             <script type="text/javascript" charset="utf-8" src="https://cy-cdn.kuaizhan.com/js/changyan.labs.https.js?appid=cyuTcdCYg"></script>
           </div>
 
-          {{!-- 推荐 --}}
-          {{> "recommend"}}
-
-          {{!-- Gitalk评论接入 --}}
+          {{!-- disqus评论接入 --}}
           <section class="post-full-comments" style="width: 95%; margin: 0 auto;">
             <div id="disqus_thread"></div>
             <script>
@@ -191,6 +188,9 @@ into the {body} of the default.hbs template --}}
             </script>
           </section>
         {{/post}}
+
+        {{!-- 推荐 --}}
+        {{> "recommend"}}
       </div>
     </article>
   </main>

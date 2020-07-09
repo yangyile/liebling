@@ -107,6 +107,10 @@ ol.toc-list {
 }
 
 /* 搜狐评论打赏 */
+.souhu-comment {
+  width: 95%;
+  margin: 30px auto;
+}
 @media (max-width: 500px) {
   .toc-container .toc, .souhu-comment {
     display: none;

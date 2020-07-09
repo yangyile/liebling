@@ -176,13 +176,12 @@ into the {body} of the default.hbs template --}}
             <div id="disqus_thread"></div>
             <script>
               var disqus_config = function () {
-                this.page.url = "{{url absolute="true"}}";  
-                this.page.identifier = "ghost-{{comment_id}}"
+                this.page.url = "{{url absolute="true"}}";
+                this.page.identifier = "ghost-{{comment_id}}";
               };
-              var commentSrc = "{{asset "js/embed.js"}}";
               (function() {
                 var d = document, s = d.createElement('script');
-                s.src = commentSrc;
+                s.src = 'https://yangyile.disqus.com/embed.js';
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
               })();

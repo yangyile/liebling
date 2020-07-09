@@ -159,6 +159,21 @@ into the {body} of the default.hbs template --}}
             </div>
           </section>
 
+          {{!-- 接入打赏 --}}
+          <div style="width: 95%; margin: 10px auto;" class="souhu-comment">
+            <!-- 代码1：放在页面需要展示的位置  -->
+            <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+            <div id="cyReward" role="cylabs" data-use="reward" sid="{{id}}"></div>
+            <!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+            <!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+            <!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+            <script type="text/javascript" charset="utf-8" src="https://cy-cdn.kuaizhan.com/js/lib/jquery.js"></script>
+            <script type="text/javascript" charset="utf-8" src="https://cy-cdn.kuaizhan.com/js/changyan.labs.https.js?appid=cyuTcdCYg"></script>
+          </div>
+
+          {{!-- 推荐 --}}
+          {{> "recommend"}}
+
           {{!-- Gitalk评论接入 --}}
           <section class="post-full-comments" style="width: 95%; margin: 0 auto;">
             <div id="disqus_thread"></div>
@@ -174,39 +189,8 @@ into the {body} of the default.hbs template --}}
                 (d.head || d.body).appendChild(s);
               })();
             </script>
-            {{!-- gittalk --}}
-            {{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-            <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-            <div id="gitalk-container"></div>
-            <script>
-                var gitalk = new Gitalk({
-                    clientID: '68af522bc18f8d144e5c',
-                    clientSecret: '51a1148f6e27f30f9d6d7407216251ef0fdbd546',
-                    repo: 'chly-yile-comments',
-                    owner: 'yangyile',
-                    admin: ['yangyile'], //这里可以填写具有写权限的用户名列表，用来初始化Issues的
-                    id: '{{comment_id}}',
-                    distractionFreeMode: false // Facebook-like distraction free mode
-                });
-                gitalk.render('gitalk-container');
-            </script> --}}
           </section>
-
-          {{!-- 接入打赏 --}}
-          <div style="width: 95%; margin: 10px auto;" class="souhu-comment">
-            <!-- 代码1：放在页面需要展示的位置  -->
-            <!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
-            <div id="cyReward" role="cylabs" data-use="reward" sid="{{id}}"></div>
-            <!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
-            <!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
-            <!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
-            <script type="text/javascript" charset="utf-8" src="https://cy-cdn.kuaizhan.com/js/lib/jquery.js"></script>
-            <script type="text/javascript" charset="utf-8" src="https://cy-cdn.kuaizhan.com/js/changyan.labs.https.js?appid=cyuTcdCYg"></script>
-          </div>
         {{/post}}
-
-        {{!-- 推荐 --}}
-        {{> "recommend"}}
       </div>
     </article>
   </main>

@@ -179,9 +179,10 @@ into the {body} of the default.hbs template --}}
                 this.page.url = "{{url absolute="true"}}";  
                 this.page.identifier = "ghost-{{comment_id}}"
               };
+              var commentSrc = "{{asset "js/embed.js"}}";
               (function() {
                 var d = document, s = d.createElement('script');
-                s.src = 'https://yangyile.disqus.com/embed.js';
+                s.src = commentSrc;
                 s.setAttribute('data-timestamp', +new Date());
                 (d.head || d.body).appendChild(s);
               })();

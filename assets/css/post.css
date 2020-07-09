@@ -62,7 +62,6 @@ pre {
 .toc-container .toc {
   position: fixed;
   top: 70px;
-  bottom: 0;
   overflow-y: scroll;
   width: 230px;
   right: -17px;

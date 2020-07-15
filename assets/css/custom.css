@@ -155,3 +155,26 @@
   font-size: .8rem;
   color: #cccccc;
 }
+
+/* 公共底部 */
+.m-footer .friendly-links {
+  padding: 20px;
+  background-color: var(--secondary-subtle-color);
+}
+.m-footer .friendly-links ul {
+  display: flex;
+}
+.m-footer .friendly-links ul li {
+  list-style: none;
+  font-size: .9rem;
+  margin-left: 15px;
+}
+.m-footer .friendly-links ul li:first-child {
+  margin-left: 0;
+}
+.m-footer .friendly-links ul li a {
+  transition: all .2s;
+}
+.m-footer .friendly-links ul li a:hover {
+  color: #3eb0ef;
+}

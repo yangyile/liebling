@@ -17,6 +17,7 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: .9rem;
 }
 
 /* 自定义标签页 */

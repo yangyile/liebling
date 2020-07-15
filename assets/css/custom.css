@@ -10,6 +10,15 @@
   border-bottom: 1px dashed #efd114;
 }
 
+/* loop */
+.m-article-card__info .m-article-card__info-link .m-article-card__expert {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* 自定义标签页 */
 .tag-cards-title {
   text-align: center;

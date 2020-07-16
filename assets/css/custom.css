@@ -196,3 +196,10 @@
 .m-footer .friendly-links ul li a:hover {
   color: #3eb0ef;
 }
+
+/* 公共头部 */
+.m-recent-article__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

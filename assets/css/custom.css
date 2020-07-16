@@ -177,11 +177,15 @@
 }
 .m-footer .friendly-links ul {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 .m-footer .friendly-links ul li {
   list-style: none;
   font-size: .9rem;
-  margin-left: 15px;
+  margin: 8px 0 0 15px;
 }
 .m-footer .friendly-links ul li:first-child {
   margin-left: 0;

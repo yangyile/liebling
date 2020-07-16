@@ -11,7 +11,8 @@
 }
 
 /* loop */
-.m-article-card__info .m-article-card__info-link .m-article-card__expert {
+.m-article-card__info .m-article-card__info-link .m-article-card__expert,
+.m-featured-article__content .m-featured-article__expert {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

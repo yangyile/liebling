@@ -14,7 +14,7 @@ into the {body} of the default.hbs template --}}
     <article>
       <div class="l-content">
         <h1 class="tag-cards-title"><span class="tag-cards-cont">{{t "Living Tags"}}</span></h1>
-        {{#get "tags" filter="slug:[car,film,finance,kongfu,medicine,music,photography,reading]" order="published_at desc"}}
+        {{#get "tags" filter="slug:[translate,car,film,finance,kongfu,medicine,music,photography,reading]" order="published_at desc"}}
           {{> tag-card}}
         {{/get}}
       </div>

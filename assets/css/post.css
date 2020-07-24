@@ -42,6 +42,7 @@ pre {
   padding: 20px;
   overflow-x: auto;
   border: 1px dashed #ccc;
+  white-space: pre-wrap;
 }
 @media only screen and (min-width: 48rem) {
   .l-post-content figure.kg-width-full {
